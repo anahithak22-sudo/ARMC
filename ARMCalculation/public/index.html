@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARMCALC ֏ — Yerevan Financial Intelligence System</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="ticker-bar">
+    <div class="ticker-label">AMD MARKET</div>
+    <div class="ticker-overflow">
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo">ARM<span class="green">CALC</span> <span class="dim">֏</span></div>
+      <div class="logo-sub">YEREVAN FINANCIAL INTELLIGENCE SYSTEM v2.1</div>
+    </div>
+    <div class="header-meta">
+      <div>EXCHANGE RATE <b>1 USD = 387.4 AMD</b></div>
+      <div id="clock">--:--:-- | YER</div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="panel-left">
+
+      <div class="section-label">Asset Valuation Terminal</div>
+
+      <input class="input-field" id="input"
+        placeholder="Enter asset, concept, or fever dream..."
+        onkeydown="if(event.key==='Enter')calculate()"/>
+      <div class="input-hint">EXAMPLES: FERRARI · DEATH STAR · ARMENIAN WEDDING · MOON</div>
+
+      <div class="btn-row">
+        <button class="btn-primary" onclick="calculate()">▶ CALCULATE IN AMD ֏</button>
+        <button class="btn-random" onclick="randomIdea()">⚄ RANDOM</button>
+      </div>
+
+      <div class="result-area" id="result">
+        <div class="section-label">Valuation Report</div>
+
+        <div class="price-block">
+          <div class="price-label">INSTRUMENT</div>
+          <div class="price-title" id="res-title">—</div>
+          <div class="price-label">ESTIMATED VALUE (AMD)</div>
+          <div class="price-value" id="res-price">—</div>
+          <div class="price-usd" id="res-usd"></div>
+        </div>
+
+        <div class="section-label">Armenian Equivalents</div>
+        <div class="equiv-block" id="res-equivs"></div>
+
+        <div class="section-label">Analyst Commentary</div>
+        <div class="comment-block">
+          <div class="comment-pre">// YEREVAN DESK — RESEARCH NOTE</div>
+          <div class="comment-text" id="res-comment">—</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="panel-right">
+      <div class="right-section">
+        <div class="section-label padded top">Market Data</div>
+        <div class="padded" id="market-data"></div>
+      </div>
+      <div class="right-section no-border">
+        <div class="section-label padded top">Recent Queries</div>
+        <div class="padded" id="history">
+          <div class="empty-state">
+            <div class="empty-text">NO RECENT VALUATIONS<br>SUBMIT A QUERY<br>TO BEGIN</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div class="status-text"><span class="status-dot"></span>SYSTEM ONLINE · YEREVAN EXCHANGE CONNECTED</div>
+    <div class="status-text">ARMCALC © 2025 · ALL PRICES ARE ESTIMATES · ОЧЕ ЭС</div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
